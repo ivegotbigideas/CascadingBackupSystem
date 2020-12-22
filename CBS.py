@@ -29,3 +29,12 @@ def removeCbsTempDirectory(path):
                 moveDirectoryContentsUpOne(path)
                 shutil.rmtree(path)
             continueLoop = 0
+
+def copyTree(src,dest):
+    dest = dest + "/CascadingBackupSystem"
+    dir_util.copy_tree(src,dest)
+
+if __name__ == "__main__":
+    src = generateDirectoryPathFromDialogue()
+    dest = generateDirectoryPathFromDialogue()
+    copyTree(src,dest)
